@@ -1,0 +1,1 @@
+C:\Users\HP\AppData\Local\Python\pythoncore-3.10-64\python.exe -m rl_zoo3.train --algo dqn --env SpaceInvadersNoFrameskip-v4 -f logs/ -c dqn.yml
