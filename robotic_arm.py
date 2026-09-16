@@ -14,26 +14,26 @@ from huggingface_hub import notebook_login
 
 env_id = "PandaReachDense-v3"
 
-# env = gym.make(env_id)
+env = gym.make(env_id)
 
-# s_size = env.observation_space.shape
-# a_size = env.action_space
+s_size = env.observation_space.shape
+a_size = env.action_space
 
-# print("OBSERVATION SPACE: ", s_size)
-# print("Obs sample: ", env.observation_space.sample())
+print("OBSERVATION SPACE: ", s_size)
+print("Obs sample: ", env.observation_space.sample())
 
-# print("ACTION SPACE: ", a_size)
-# print("Action sample: ", env.action_space.sample())
+print("ACTION SPACE: ", a_size)
+print("Action sample: ", env.action_space.sample())
 
-# env = make_vec_env(env_id, n_envs=4)
-# env = VecNormalize(venv=env, norm_obs=True, norm_reward=True, clip_obs=10.)
+env = make_vec_env(env_id, n_envs=4)
+env = VecNormalize(venv=env, norm_obs=True, norm_reward=True, clip_obs=10.)
 
-# model = A2C(policy="MultiInputPolicy", env=env, verbose=1)
+model = A2C(policy="MultiInputPolicy", env=env, verbose=1)
 
-# model.learn(500_000)
+model.learn(500_000)
 
-# model.save("a2c-PandaReachDense-v3")
-# env.save("vec_normalize.pk1")
+model.save("a2c-PandaReachDense-v3")
+env.save("vec_normalize.pk1")
 
 eval_env = DummyVecEnv([lambda: gym.make("PandaReachDense-v3")])
 eval_env = VecNormalize(eval_env)
