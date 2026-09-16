@@ -1,1 +1,4 @@
 .venv/
+ml-agents/
+training-envs-executables/
+results/
