@@ -2,3 +2,5 @@
 ml-agents/
 training-envs-executables/
 results/
+*.zip
+*.pk1
